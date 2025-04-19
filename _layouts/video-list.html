@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="video-content">
+  <h1 class="text-3xl font-bold mb-6">{{ page.title }}</h1>
+  
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    {{ content }}
+    
+    {% if page.playlist_id %}
+    <div class="mt-6">
+      <h3 class="text-xl font-medium mb-4">播放列表</h3>
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe 
+          src="https://www.youtube.com/embed/videoseries?list={{ page.playlist_id }}" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          class="w-full rounded shadow-lg"
+          style="height: 450px;"
+        ></iframe>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
